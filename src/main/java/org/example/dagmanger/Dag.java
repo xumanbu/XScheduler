@@ -2,10 +2,7 @@ package org.example.dagmanger;
 
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @Data
 public class Dag {
@@ -36,10 +33,19 @@ public class Dag {
     }
 
 
-    public static class StartOperator{
+    public static class StartOperator extends Operator{
         LinkedList<Operator> operatorList = new LinkedList<>();
     }
 
+
+    public long getInterval(){
+        // CronScriptUtil to interval
+        return 0;
+    }
+
+    public Iterator<Operator> iter(){
+        return this.startOperator.operatorList.iterator();
+    }
 
 }
 

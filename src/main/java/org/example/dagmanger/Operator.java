@@ -3,6 +3,7 @@ package org.example.dagmanger;
 import lombok.Data;
 import org.example.dagmanger.commond.Command;
 
+import java.util.Iterator;
 import java.util.List;
 
 @Data
@@ -16,6 +17,10 @@ public class Operator {
 
     public void setDepend(Operator operator){
         depends.add(operator);
+    }
+
+    public Iterator<Operator> iter(){
+        return depends.iterator();
     }
 
 }
